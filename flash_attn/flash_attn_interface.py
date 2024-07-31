@@ -41,7 +41,8 @@ def _get_block_size_n(device, head_dim, is_dropout, is_causal):
         return 64
     elif head_dim <= 256:
         return 64
-
+    elif head_dim <= 576:
+        return 64
 
 def _flash_attn_forward(
     q, k, v, dropout_p, softmax_scale, causal, window_size, alibi_slopes, return_softmax

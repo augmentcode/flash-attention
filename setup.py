@@ -118,8 +118,8 @@ if not SKIP_CUDA_BUILD:
             )
     # cc_flag.append("-gencode")
     # cc_flag.append("arch=compute_75,code=sm_75")
-    # cc_flag.append("-gencode")
-    # cc_flag.append("arch=compute_80,code=sm_80")
+    cc_flag.append("-gencode")
+    cc_flag.append("arch=compute_80,code=sm_80")
     if CUDA_HOME is not None:
         if bare_metal_version >= Version("11.8"):
             cc_flag.append("-gencode")
